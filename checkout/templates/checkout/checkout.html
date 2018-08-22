@@ -1,7 +1,13 @@
 {% extends "base.html" %}
-
+{% load bootstrap_tags %}
 {% block content %}
 
-<h2>what's up dog!</h2>
+<h2>Checkout</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form | as_bootstrap}}
+    
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
 
 {% endblock %}
